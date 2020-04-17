@@ -14,3 +14,4 @@ C:\Users\sa\source\repos\Parikshav1\Parikshav1\obj\Debug\Parikshav1.csproj.Gener
 C:\Users\sa\source\repos\Parikshav1\Parikshav1\obj\Debug\Parikshav1.csproj.CopyComplete
 C:\Users\sa\source\repos\Parikshav1\Parikshav1\obj\Debug\Parikshav1.exe
 C:\Users\sa\source\repos\Parikshav1\Parikshav1\obj\Debug\Parikshav1.pdb
+C:\Users\sa\source\repos\Parikshav1\Parikshav1\obj\Debug\Parikshav1.HomeForm.resources

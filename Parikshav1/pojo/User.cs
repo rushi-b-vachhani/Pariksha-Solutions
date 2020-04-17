@@ -12,8 +12,8 @@ namespace Parikshav1.pojo
 {
     class User
     {
-        
 
+        int userId;
         bool loginStatus = false;
         String userName;
         String userEmail;
@@ -62,6 +62,8 @@ namespace Parikshav1.pojo
             get { return userPassword; }
             set { userPassword = value; }
         }
+
+        public int UserId { get => userId; set => userId = value; }
 
         public static User getUser(String email, String Pass)
         {
@@ -155,6 +157,31 @@ namespace Parikshav1.pojo
                 return false;
             }
 
+        }
+
+        public static User getUser(int UserId)
+        {
+            db db = new db();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `tb_user` WHERE `UserId` = @userid", db.getConnection());
+            command.Parameters.Add("@userid", MySqlDbType.VarChar).Value = UserId;
+            adapter.SelectCommand = command;
+            if (adapter.Fill(table) > 0)
+            {
+                Console.WriteLine("It worked1");
+                User user = new User();
+                user.UserId = Convert.ToInt32(table.Rows[0]["UserId"]);
+                user.UserName = table.Rows[0]["UserName"].ToString();
+                user.UserEmail = table.Rows[0]["UserEmail"].ToString();
+                user.UserPassword = table.Rows[0]["UserPassword"].ToString();
+                user.UserLastLogin = table.Rows[0]["UserLastLogin"].ToString();
+                user.UserType = table.Rows[0]["UserType"].ToString();
+                Console.WriteLine("It worked2");
+                return user;
+            }
+            MessageBox.Show("ERROR");
+            return null;
         }
 
     }

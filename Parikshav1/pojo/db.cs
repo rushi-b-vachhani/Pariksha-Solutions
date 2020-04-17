@@ -35,6 +35,7 @@ namespace Parikshav1.pojo
 
             // create a function to return the connection
             public MySqlConnection getConnection()
+
             {
                 return connection;
             }

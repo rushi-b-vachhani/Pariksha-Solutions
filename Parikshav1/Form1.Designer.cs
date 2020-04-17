@@ -38,7 +38,6 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.lbUsername = new System.Windows.Forms.Label();
             this.RegisterPanel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.reg_tbPassword = new System.Windows.Forms.TextBox();
@@ -55,6 +54,7 @@
             this.temp_lbMessage = new System.Windows.Forms.Label();
             this.temp_lbName = new System.Windows.Forms.Label();
             this.Login_lbInvalidMessage = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.LoginPanel.SuspendLayout();
             this.RegisterPanel.SuspendLayout();
             this.pWelcome.SuspendLayout();
@@ -72,9 +72,9 @@
             this.LoginPanel.Controls.Add(this.lbPassword);
             this.LoginPanel.Controls.Add(this.tbPassword);
             this.LoginPanel.Controls.Add(this.lbUsername);
-            this.LoginPanel.Location = new System.Drawing.Point(12, 29);
+            this.LoginPanel.Location = new System.Drawing.Point(449, 30);
             this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(403, 396);
+            this.LoginPanel.Size = new System.Drawing.Size(416, 396);
             this.LoginPanel.TabIndex = 6;
             // 
             // label6
@@ -178,22 +178,10 @@
             this.RegisterPanel.Controls.Add(this.label3);
             this.RegisterPanel.Controls.Add(this.label2);
             this.RegisterPanel.Controls.Add(this.label1);
-            this.RegisterPanel.Location = new System.Drawing.Point(421, 29);
+            this.RegisterPanel.Location = new System.Drawing.Point(449, 30);
             this.RegisterPanel.Name = "RegisterPanel";
             this.RegisterPanel.Size = new System.Drawing.Size(416, 396);
             this.RegisterPanel.TabIndex = 7;
-            this.RegisterPanel.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.Snow;
-            this.label5.Location = new System.Drawing.Point(107, 348);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 17);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Already a member ?";
             // 
             // linkLabel1
             // 
@@ -298,11 +286,10 @@
             // 
             this.pWelcome.Controls.Add(this.wp_btnRegister);
             this.pWelcome.Controls.Add(this.wp_btnLogin);
-            this.pWelcome.Location = new System.Drawing.Point(843, 29);
+            this.pWelcome.Location = new System.Drawing.Point(449, 30);
             this.pWelcome.Name = "pWelcome";
-            this.pWelcome.Size = new System.Drawing.Size(285, 230);
+            this.pWelcome.Size = new System.Drawing.Size(416, 393);
             this.pWelcome.TabIndex = 16;
-            this.pWelcome.Visible = false;
             // 
             // wp_btnRegister
             // 
@@ -334,9 +321,9 @@
             // 
             this.pTempCheck.Controls.Add(this.temp_lbName);
             this.pTempCheck.Controls.Add(this.temp_lbMessage);
-            this.pTempCheck.Location = new System.Drawing.Point(843, 265);
+            this.pTempCheck.Location = new System.Drawing.Point(449, 30);
             this.pTempCheck.Name = "pTempCheck";
-            this.pTempCheck.Size = new System.Drawing.Size(285, 230);
+            this.pTempCheck.Size = new System.Drawing.Size(416, 393);
             this.pTempCheck.TabIndex = 17;
             this.pTempCheck.Visible = false;
             // 
@@ -374,6 +361,17 @@
             this.Login_lbInvalidMessage.Text = "Invalid credentials";
             this.Login_lbInvalidMessage.Visible = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.Snow;
+            this.label5.Location = new System.Drawing.Point(107, 348);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 17);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Already a member ?";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -384,6 +382,7 @@
             this.Controls.Add(this.pWelcome);
             this.Controls.Add(this.RegisterPanel);
             this.Controls.Add(this.LoginPanel);
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Form1";
             this.Text = "Pariksha";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -417,7 +416,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel pWelcome;
         private System.Windows.Forms.Button wp_btnLogin;
@@ -426,6 +424,7 @@
         private System.Windows.Forms.Label temp_lbMessage;
         private System.Windows.Forms.Label temp_lbName;
         private System.Windows.Forms.Label Login_lbInvalidMessage;
+        private System.Windows.Forms.Label label5;
     }
 }
 

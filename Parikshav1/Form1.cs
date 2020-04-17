@@ -24,6 +24,7 @@ namespace Parikshav1
         {
             LoginPanel.Visible = false;
             RegisterPanel.Visible = false;
+            pTempCheck.Visible = false;
             pWelcome.Visible = true;
         }
 
@@ -41,6 +42,9 @@ namespace Parikshav1
                 }
                 pTempCheck.Visible = true;
                 temp_lbName.Text = currentLoginingUser.UserName;
+                this.Hide();
+                HomeForm hForm = new HomeForm();
+                hForm.ShowDialog();
             }
             else
             {
