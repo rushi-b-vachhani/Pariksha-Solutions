@@ -51,14 +51,33 @@ namespace Parikshav1
         {
             
             var username = reg_tbName.Text; 
-             var email = reg_tbEmail.Text;
+            var email = reg_tbEmail.Text;
             var password = reg_tbPassword.Text;
             var userType = "student";
-            User currentLoginingUser = new User(username, email, password, userType);
-            if (checkRegistrationTextBox(username,email,password))
+            bool registrationStatus = false;
+            if (checkRegistrationTextBox(username, email, password))
             {
-                
+                User currentRegisteringingUser = new User(username, email, password, userType);
+                registrationStatus = User.StoreDB(currentRegisteringingUser);
+                if (registrationStatus == true)
+                {
+                    foreach (Control c in this.Controls)
+                    {
+                        if (c is Panel) c.Visible = false;
+                    }
+                    LoginPanel.Visible = true;
+                }
+                else
+                {
+                    Login_lbInvalidMessage.Visible = true;
+                }
             }
+            else
+            {
+                MessageBox.Show("Enter Your All The Fields", "Empty Data", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            
+
             /*currentLoginingUser.StoreDB(username, email, password);*/
         }
 
@@ -99,11 +118,11 @@ namespace Parikshav1
                 email.Equals("") || email.Equals(null)
                 || pass.Equals("") || pass.Equals(null))
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
 
         }
