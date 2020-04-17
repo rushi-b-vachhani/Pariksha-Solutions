@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Configuration;
-
+using Parikshav1.pojo;
 namespace Parikshav1
 {
     public partial class Form1 : Form
     {
-        User currentLoginingUser;
+        User currentLoginingUser = null;
         public Form1()
         {
             InitializeComponent();
@@ -32,15 +32,34 @@ namespace Parikshav1
             
             var username = tbUsername.Text;
             var password = tbPassword.Text;
-            User.getUser(username, password);
+            currentLoginingUser = User.getUser(username, password);
+            if (currentLoginingUser != null)
+            {
+                foreach (Control c in this.Controls)
+                {
+                    if (c is Panel) c.Visible = false;
+                }
+                pTempCheck.Visible = true;
+                temp_lbName.Text = currentLoginingUser.UserName;
+            }
+            else
+            {
+                Login_lbInvalidMessage.Visible = true;
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            User currentLoginingUser = new User();
-            var username = reg_tbName.Text;
-            var email = reg_tbEmail.Text;
+            
+            var username = reg_tbName.Text; 
+             var email = reg_tbEmail.Text;
             var password = reg_tbPassword.Text;
-            //currentLoginingUser.StoreDB(username, email, password);
+            var userType = "student";
+            User currentLoginingUser = new User(username, email, password, userType);
+            if (checkRegistrationTextBox(username,email,password))
+            {
+                
+            }
+            /*currentLoginingUser.StoreDB(username, email, password);*/
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -69,6 +88,24 @@ namespace Parikshav1
             pWelcome.Visible = false;
         }
 
-        
+        public Boolean checkRegistrationTextBox(String Uname, String Uemail, String Upass)
+        {
+            String name = Uname;
+            String email = Uemail;
+            String pass = Upass;
+            
+
+            if (name.Equals("") || name.Equals(null) ||
+                email.Equals("") || email.Equals(null)
+                || pass.Equals("") || pass.Equals(null))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }
