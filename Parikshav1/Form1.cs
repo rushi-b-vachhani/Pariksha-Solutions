@@ -21,36 +21,53 @@ namespace Parikshav1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoginPanel.Controls.Add(tbUsername);
-            LoginPanel.Controls.Add(tbPassword);
-            LoginPanel.Controls.Add(lbLogin);
-            LoginPanel.Controls.Add(tbUsername);
-            LoginPanel.Controls.Add(tbPassword);
-            LoginPanel.Controls.Add(btName);
+            LoginPanel.Visible = false;
+            RegisterPanel.Visible = false;
+            pWelcome.Visible = true;
         }
 
         private void lbLogin_Click(object sender, EventArgs e)
         {
-            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
-            MySqlConnection con = new MySqlConnection(ConString);
-            con.Open();
-            var cmd = new MySqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from tb_student";
-            
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-
+            User currentLoginingUser = new User();
             var username = tbUsername.Text;
             var password = tbPassword.Text;
-
-            dataReader.Read();
-            if (username.Equals(dataReader.GetString("StudentEmail")) && password.Equals(dataReader.GetString("StudentPassword")))
-            {
-                LoginPanel.Visible = false;
-                PHomePage.Controls.Add(lbLoginSuccess);
-                PHomePage.Show();
-            }
-
+            currentLoginingUser.getUser(username, password);
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User currentLoginingUser = new User();
+            var username = reg_tbName.Text;
+            var email = reg_tbEmail.Text;
+            var password = reg_tbPassword.Text;
+            //currentLoginingUser.StoreDB(username, email, password);
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoginPanel.Visible = false;
+            RegisterPanel.Visible = true;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoginPanel.Visible = true;
+            RegisterPanel.Visible = false;
+        }
+
+        private void wp_btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginPanel.Visible = true;
+            RegisterPanel.Visible = false;
+            pWelcome.Visible = false;
+        }
+
+        private void wp_btnRegister_Click(object sender, EventArgs e)
+        {
+            LoginPanel.Visible = false;
+            RegisterPanel.Visible = true;
+            pWelcome.Visible = false;
+        }
+
+        
     }
 }
