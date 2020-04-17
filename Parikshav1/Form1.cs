@@ -14,6 +14,7 @@ namespace Parikshav1
 {
     public partial class Form1 : Form
     {
+        User currentLoginingUser;
         public Form1()
         {
             InitializeComponent();
@@ -28,10 +29,10 @@ namespace Parikshav1
 
         private void lbLogin_Click(object sender, EventArgs e)
         {
-            User currentLoginingUser = new User();
+            
             var username = tbUsername.Text;
             var password = tbPassword.Text;
-            currentLoginingUser.getUser(username, password);
+            User.getUser(username, password);
         }
         private void button1_Click(object sender, EventArgs e)
         {
