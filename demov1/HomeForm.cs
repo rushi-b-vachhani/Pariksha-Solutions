@@ -30,7 +30,6 @@ namespace demov1
             List<Exam> examlist = Exam.getExams();
             foreach (var exam in examlist)
             { 
-                
                 string[] arr = new string[2];
                 arr[0] = exam.name;
                 arr[1] = exam.code;
@@ -93,7 +92,9 @@ namespace demov1
             if (optedExam != null)
             {
                 examlistview.SelectedItems.Clear();
-                MessageBox.Show(optedExam.name, "Exam details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                InstructionForm instructionform = new InstructionForm(user, optedExam);
+                instructionform.Show();
             }
         }
     }

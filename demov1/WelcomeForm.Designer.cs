@@ -39,6 +39,8 @@
             this.login_password = new System.Windows.Forms.TextBox();
             this.lbUsername = new System.Windows.Forms.Label();
             this.reg_panel = new System.Windows.Forms.Panel();
+            this.adminradio = new System.Windows.Forms.RadioButton();
+            this.studentradio = new System.Windows.Forms.RadioButton();
             this.reg_msg = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.goto_login = new System.Windows.Forms.LinkLabel();
@@ -50,8 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.studentradio = new System.Windows.Forms.RadioButton();
-            this.adminradio = new System.Windows.Forms.RadioButton();
             this.login_panel.SuspendLayout();
             this.reg_panel.SuspendLayout();
             this.SuspendLayout();
@@ -201,6 +201,28 @@
             this.reg_panel.Size = new System.Drawing.Size(312, 387);
             this.reg_panel.TabIndex = 7;
             // 
+            // adminradio
+            // 
+            this.adminradio.AutoSize = true;
+            this.adminradio.Location = new System.Drawing.Point(160, 253);
+            this.adminradio.Name = "adminradio";
+            this.adminradio.Size = new System.Drawing.Size(53, 17);
+            this.adminradio.TabIndex = 20;
+            this.adminradio.Text = "admin";
+            this.adminradio.UseVisualStyleBackColor = true;
+            // 
+            // studentradio
+            // 
+            this.studentradio.AutoSize = true;
+            this.studentradio.Checked = true;
+            this.studentradio.Location = new System.Drawing.Point(66, 253);
+            this.studentradio.Name = "studentradio";
+            this.studentradio.Size = new System.Drawing.Size(60, 17);
+            this.studentradio.TabIndex = 19;
+            this.studentradio.TabStop = true;
+            this.studentradio.Text = "student";
+            this.studentradio.UseVisualStyleBackColor = true;
+            // 
             // reg_msg
             // 
             this.reg_msg.AutoSize = true;
@@ -329,39 +351,19 @@
             this.label1.Text = "Register";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // studentradio
-            // 
-            this.studentradio.AutoSize = true;
-            this.studentradio.Checked = true;
-            this.studentradio.Location = new System.Drawing.Point(66, 253);
-            this.studentradio.Name = "studentradio";
-            this.studentradio.Size = new System.Drawing.Size(60, 17);
-            this.studentradio.TabIndex = 19;
-            this.studentradio.TabStop = true;
-            this.studentradio.Text = "student";
-            this.studentradio.UseVisualStyleBackColor = true;
-            // 
-            // adminradio
-            // 
-            this.adminradio.AutoSize = true;
-            this.adminradio.Location = new System.Drawing.Point(160, 253);
-            this.adminradio.Name = "adminradio";
-            this.adminradio.Size = new System.Drawing.Size(53, 17);
-            this.adminradio.TabIndex = 20;
-            this.adminradio.Text = "admin";
-            this.adminradio.UseVisualStyleBackColor = true;
-            // 
             // WelcomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(946, 547);
+            this.ClientSize = new System.Drawing.Size(1034, 581);
             this.Controls.Add(this.login_panel);
             this.Controls.Add(this.reg_panel);
             this.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WelcomeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pariksha";
             this.login_panel.ResumeLayout(false);
             this.login_panel.PerformLayout();

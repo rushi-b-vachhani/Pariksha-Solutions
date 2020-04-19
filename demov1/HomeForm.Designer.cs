@@ -158,7 +158,7 @@
             this.examlistview.Size = new System.Drawing.Size(396, 315);
             this.examlistview.TabIndex = 1;
             this.examlistview.UseCompatibleStateImageBehavior = false;
-            this.examlistview.View = System.Windows.Forms.View.List;
+            this.examlistview.View = System.Windows.Forms.View.Details;
             this.examlistview.Click += new System.EventHandler(this.examlistview_Click);
             // 
             // columnHeader1

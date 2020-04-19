@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace demov1.POJOs
 {
-    class Exam
+    public class Exam
     {
         public int id { get; set; }
         public string name { get; set; }
@@ -52,15 +52,20 @@ namespace demov1.POJOs
                         (int)reader["qcount"], (int)reader["duration"], (int)reader["marks"], (int)reader["negativemarks"], null,(DateTime)reader["starttime"], (DateTime)reader["endtime"]);
                 examlist.Add(e);
             }
-            
+
+            reader.Close();
             return examlist;
         }
 
         
+
+
         public override string ToString()
         {   
             return this.name + "| id: " + this.id + "\n";
         }
+
+
     }
 
 
